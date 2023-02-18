@@ -10,9 +10,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import tn.esprit.entity.Livraison;
+import tn.esprit.entity.Commande;
 import tn.esprit.entity.Ticket;
-import tn.esprit.services.LivraisonService;
+import tn.esprit.services.CommandeService;
 import tn.esprit.services.TicketService;
 import tn.esprit.tools.MaConnection;
 
@@ -33,17 +33,17 @@ public class Pidev {
         Ticket t1 = new Ticket(17,45,15,"VIP",1);
         //t.ajouter(t1);
        //t.supprimerTicket(t1);
-       t.modifierTicket("chaise", t1);
-       System.out.println(t.getAll());*/
+        t.modifierTicket("chaise", t1);
+        System.out.println(t.getAll());*/
 
-       LivraisonService livraisonService = new LivraisonService();
+        CommandeService cs = new CommandeService();
+        Commande c1 = new Commande(1,12,10 ,1, "hadhra");
+        cs.ajouter(c1);
+        // cs.supprimerCommande(c1);
+        //cs.modifierCommande(24.3, c1);
 
-        
-        // Test the add method
-        Livraison livraison = new Livraison(4,new java.util.Date(),"paris",25,1,1);
-        //livraisonService.ajouter(livraison);
-        //livraisonService.supprimerLivraison(livraison);
-        //livraisonService.modifierLivraison("france",livraison);
-        //System.out.println(livraison);
+        System.out.println(cs.getAll());
+
+
     }
     }
